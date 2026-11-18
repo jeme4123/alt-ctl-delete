@@ -1461,4 +1461,203 @@ textarea {
   font-family: inherit;
 }
 
+/* ======================================
+   MOBILE NAVIGATION
+====================================== */
+
+/* Hidden on desktop */
+.menu-toggle {
+  display: none;
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ======================================
+   MOBILE LAYOUT
+====================================== */
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    gap: 0;
+    position: relative;
+    min-height: 75px;
+  }
+
+  /* COMPANY LOGO */
+
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .logo {
+    width: 125px;
+    height: auto;
+  }
+
+  /* HIDE DESCRIPTION AND DIVIDER */
+
+  .brand-divider,
+  .brand-text {
+    display: none;
+  }
+
+  /* HAMBURGER BUTTON */
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #1b222a;
+    border: 1px solid #46505b;
+    border-radius: 8px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* MOBILE NAVIGATION */
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0;
+    padding: 15px 0;
+    order: 3;
+  }
+
+  .nav.nav-open {
+    display: flex;
+  }
+
+  .nav a {
+    display: block;
+    padding: 14px 12px;
+    font-size: 19px;
+    font-weight: 600;
+    border-bottom: 1px solid #282d35;
+  }
+
+  .nav a:hover {
+    color: #ff161c;
+  }
+
+  /* CONSULTATION BUTTON */
+
+  .header > .consult-btn {
+    display: none;
+  }
+
+  /* ======================================
+     MOBILE HERO
+  ====================================== */
+
+  .hero {
+    min-height: auto;
+    padding: 65px 20px 75px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    gap: 8px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  .hero h1 span {
+    margin-top: 10px;
+  }
+
+  .hero-line {
+    margin: 25px 0;
+    width: 75px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  /* BACKGROUND IMAGE */
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-position: 65% center;
+  }
+
+  /* HERO BUTTONS */
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* SECTION SPACING */
+
+  .about-section,
+  .services-section,
+  .portfolio-section,
+  .contact-section {
+    padding: 65px 20px;
+  }
+
+  /* PREVENT HORIZONTAL OVERFLOW */
+
+  .app {
+    overflow-x: clip;
+  }
+}
+
 

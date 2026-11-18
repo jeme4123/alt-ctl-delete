@@ -125,6 +125,9 @@ function App() {
 
   const [formStatus, setFormStatus] = useState('')
 
+  //MOBILE NAVIGATION STATE
+  const [menuOpen, setMenuOpen] = useState(false)
+
   // UPDATE FORM VALUES
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -138,8 +141,6 @@ function App() {
   }
 
   // FORM DEMONSTRATION
-  
-
 const handleSubmit = async (event) => {
   event.preventDefault()
 
@@ -192,35 +193,72 @@ const handleSubmit = async (event) => {
           HEADER / NAVIGATION
       ================================== */}
 
-      <header className="header">
+      
+{/* HEADER / NAVIGATION */}
+  <header className="header">
 
-        <div className="brand">
-          <img
-            src="/images/acd-logo.png"
-            alt="ALT-CTL-DELETE Logo"
-            className="logo"
-          />
+    <div className="brand">
+      <a href="#home" className="brand-logo-link">
+        <img
+          src="/images/acd-logo.png"
+          alt="ALT-CTL-DELETE Logo"
+          className="logo"
+        />
+      </a>
 
-          <span className="brand-divider"></span>
+      <span className="brand-divider"></span>
 
-          <span className="brand-text">
-            IT Solutions & Cybersecurity
-          </span>
-        </div>
+      <span className="brand-text">
+        IT Solutions & Cybersecurity
+      </span>
+    </div>
 
-        <nav className="nav" aria-label="Main navigation">
-          <a href="#home" className="active">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#services">Services</a>
-          <a href="#work">Our Work</a>
-          <a href="#contact">Contact</a>
-        </nav>
+    {/* MOBILE MENU BUTTON */}
+    <button
+      type="button"
+      className="menu-toggle"
+      aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+      aria-expanded={menuOpen}
+      aria-controls="main-navigation"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      <span>{menuOpen ? '✕' : '☰'}</span>
+    </button>
 
-        <a href="#contact" className="consult-btn">
-          Get a Free Consultation
-        </a>
+    {/* NAVIGATION LINKS */}
+    <nav
+      id="main-navigation"
+      className={`nav ${menuOpen ? 'nav-open' : ''}`}
+      aria-label="Main navigation"
+    >
+      <a href="#home" onClick={() => setMenuOpen(false)}>
+        Home
+      </a>
 
-      </header>
+      <a href="#about" onClick={() => setMenuOpen(false)}>
+        About Us
+      </a>
+
+      <a href="#services" onClick={() => setMenuOpen(false)}>
+        Services
+      </a>
+
+      <a href="#work" onClick={() => setMenuOpen(false)}>
+        Our Work
+      </a>
+
+      <a href="#contact" onClick={() => setMenuOpen(false)}>
+        Contact
+      </a>
+    </nav>
+
+    {/* CONSULTATION BUTTON */}
+    <a href="#contact" className="consult-btn">
+      Get a Free Consultation
+    </a>
+
+  </header>
+
 
       {/* ==================================
           MAIN CONTENT
